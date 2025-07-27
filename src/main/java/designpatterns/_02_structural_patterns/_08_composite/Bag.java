@@ -17,6 +17,15 @@ public class Bag implements Component {
 
     @Override
     public int getPrice() {
-        return components.stream().mapToInt(Component::getPrice).sum();
+        return components.stream() // 리스트를 스트림 형태로 바꿈
+                .mapToInt(Component::getPrice) // 각 구성요소의 getPrice() 호출 -> 재귀 호출
+//              .mapToInt(c -> c.getPrice()) // 스트림 요소들 int 변환해주는 메서드
+                .sum();
     }
+//    int total = 0;
+//    for (Component c : components) {
+//        total += c.getPrice(); // Item이면 그냥 가격, Bag이면 또 getPrice() (재귀)
+//    }
+//    return total;
+
 }
