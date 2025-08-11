@@ -1,4 +1,4 @@
-package designpatterns._15_interpreter;
+package designpatterns._03_behavior_patterns._15_interpreter;
 
 import java.util.Map;
 
